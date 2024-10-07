@@ -1,0 +1,124 @@
+// Avril Cao
+// October 7, 2024
+// Lecture 5
+
+
+#include <iostream> 
+// I used #include <iostream> in order to use cout
+
+#include <string>
+// I used #include <string> so I can put in a string of characters in tge variable
+
+#include <iomanip>
+// I used #include <iomanip> to use set precision
+
+using namespace std;
+// I used using namespace std; in order to not have to use std:: every time I use cout of endl
+
+int main ()
+// I use int main () to start the program
+
+{
+    double moneyStart;
+    double transactionsTotal;
+    double transactionsAmount;
+    string transactionsType; 
+    char i; 
+    
+// I usee double, string, and char to declare the variables
+// I used double for numbers, string for a string of characters, and char for a single character
+
+    cout << "How much money is in your back account at the start of the day? " << endl;
+    cin >> moneyStart;
+
+    cout << "How many bank transactions were done that day? " << endl;
+    cin >> transactionsTotal;
+
+    cout << "What was the type of transaction? Choose debit or credit:" << endl;
+    cin >> transactionsType;
+// I used cin to put in values for the variables
+
+for (i = 1; i <= transactionsTotal; i++)
+
+// I used a for loop so that this loops a certain number of times
+
+{
+    cout << "What was the amount of the transaction? " << endl;
+    cin >> transactionsAmount;
+
+if (transactionsType == "debit")
+{
+    cout << "Total in account: " << "$" << moneyStart - transactionsAmount << endl;
+    cout << "Default precision: " << moneyStart - transactionsAmount << endl;
+    cout << "Precision set to 4: " << setprecision(4) << moneyStart - transactionsAmount << endl;
+}
+
+if (transactionsType == "credit")
+{
+    cout << "Total in account: " << "$" << moneyStart + transactionsAmount << endl;
+    cout << "Default precision: " << moneyStart + transactionsAmount << endl;
+    cout << "Precision set to 4: " << setprecision(4) << moneyStart + transactionsAmount << endl;   
+}
+
+// I used if statements to provide different statements for transactionsType as either debit or credit
+
+}
+
+    return 0;
+}
+
+// TOTAL DEBIT ACCOUNT: 
+/* How much money is in your bank account at the start of the day? 
+4758.58 
+How many bank transactions were done that day?
+4 
+What was the type of transaction? Choose debit or credit: 
+debit
+What was the amount of the transaction? 
+47.96
+Total in account: $4710.62
+Default precision: 4710.62
+Precision set to 4: 4711
+What was the amount of the transaction? 
+81.41
+Total in account: $4677
+Default precision: 4677
+Precision set to 4: 4677
+What was the amount of the transaction? 
+63.37
+Total in account: $4695
+Default precision: 4695
+Precision set to 4: 4695
+What was the amount of the transaction? 
+103.11
+Total in account: $4655
+Default precision: 4655
+Precision set to 4: 4655 */
+
+// TOTAL CREDIT AMOUNT: 
+/* How much money is in your bank account at the start of the day? 
+4758.58 
+How many bank transactions were done that day?
+4 
+What was the type of transaction? Choose debit or credit: 
+credit
+What was the amount of the transaction? 
+47.96
+Total in account: $4806.54
+Default precision: 4806.54
+Precision set to 4: 4807
+What was the amount of the transaction? 
+81.41
+Total in account: $4840
+Default precision: 4840
+Precision set to 4: 4840
+What was the amount of the transaction? 
+63.37
+Total in account: $4822
+Default precision: 4822
+Precision set to 4: 4822
+What was the amount of the transaction? 
+103.11
+Total in account: $4862
+Default precision: 4862
+Precision set to 4: 4862 */
